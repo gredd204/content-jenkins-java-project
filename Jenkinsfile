@@ -20,13 +20,13 @@ pipeline {
         echo "My Branch Name: ${env.BRANCH_NAME}"
 
         script {
-          def myLib = new linuxacademy.git.gitStuff();
+          sh 'deployment.yaml'
 
-          echo "My Commit: ${myLib.gitCommit("${env.WORKSPACE}/.git")}"
+          echo "Demo"
         }
       }
     }
-    stage('Unit Tests') {
+   */ stage('Unit Tests') {
       agent {
         label 'apache'
       }
@@ -130,5 +130,5 @@ pipeline {
         to: "brandon@linuxacademy.com"
       )
     }
-  }
+  }*/
 }
